@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>face-blur | service to blur face for privacy</title>
+
+    <!-- jquery -->
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+
+    <!-- face-api -->
+    <script src="scripts/face-api.min.js"></script>
+
+    <!-- index -->
+    <script type="module" src="scripts/main.js"></script>
+
+<body>
+    <div id="preview">
+        <img id="image-preview">
+    </div>
+
+    <form id="img-form">
+        <input id="ufile" name="ufile" type="file" accept="image/jpeg,image/png"><br>
+    </form>
+
+    <button type="button" id="process">process</button>
+
+    <canvas id="image-buffer"></canvas>
+    <p>Welcome to face-blur :)</p>
+</body>
+
+</html>

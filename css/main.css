@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#image-buffer {
+    display: none;
+}
+
+#image-preview {
+    width: 70vw;
+    height: 70vh;
+}
