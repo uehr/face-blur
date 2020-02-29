@@ -65,4 +65,12 @@ $(window).on('load', async () => {
         })
 
     })
+
+    $("#download").click(() => {
+        const canvas = document.getElementById("image-buffer");
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "test.png";
+        link.click();
+    })
 });
