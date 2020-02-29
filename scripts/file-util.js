@@ -11,7 +11,7 @@ $(window).on('load', async () => {
     })
 
     if (!window.FileReader) {
-        alert("File API がサポートされていません。")
+        alert("Not support file API")
         return false
     }
 
@@ -25,10 +25,10 @@ $(window).on('load', async () => {
 
     const isValidFile = file => {
         if (file.type.indexOf("image") < 0) {
-            alert("画像ファイルを選択してください")
+            alert("Please select image file")
             return false
         } else if (!file.name.match(".jpg|.jpeg|.png")) {
-            alert("JPEG/PNG形式のファイルを選択してください")
+            alert("Please select a file in JPEG / PNG format")
             return false
         }
 
