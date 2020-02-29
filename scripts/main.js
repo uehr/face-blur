@@ -1,12 +1,13 @@
 import * as StackBlur from "./stackblur-es.js";
 import * as splash from "./splash.js"
-const blurSec = 2
-const showSec = 1
+const splashBlurSec = 2
+const splashShowSec = 1
+const splashFadeoutSec = 3
 
 $(window).on('load', async () => {
     setTimeout(() => {
-        splash.finish(blurSec)
-    }, showSec * 1000)
+        splash.finish(splashBlurSec, splashFadeoutSec)
+    }, splashShowSec * 1000)
 
     const blurRadius = 15
     const minConfidence = 0.1
