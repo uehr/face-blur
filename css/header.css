@@ -1,9 +1,9 @@
 #header {
     text-align: center;
+    background-color: var(--body-color4);
 }
 
 #header-logo {
-    width: 20vw;
-    margin-left: 1%;
-    margin-top: 1%;
+    height: 8vh;
+    margin: 1%;
 }
