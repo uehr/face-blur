@@ -14,34 +14,7 @@ $(window).on('load', async () => {
     const maxResults = 500
     const marginScale = 1
     let preview = $("#image-preview")
-    let canvas = $("#image-buffer");
     await faceapi.loadSsdMobilenetv1Model('/models')
-
-    $("#ufile").change(function () {
-        if (!this.files.length) {
-            alert('ファイルが選択されていません');
-            return;
-        }
-
-        let file = this.files[0];
-        let image = new Image();
-        let fr = new FileReader();
-
-        let ctx = canvas[0].getContext('2d');
-        fr.onload = function (evt) {
-            image.onload = function () {
-                const width = image.naturalWidth
-                const height = image.naturalHeight
-                canvas.attr('width', width);
-                canvas.attr('height', height);
-                ctx.drawImage(image, 0, 0, width, height);
-            }
-            image.src = evt.target.result;
-            preview.attr("src", evt.target.result)
-        }
-
-        fr.readAsDataURL(file);
-    })
 
     $("#process").click(() => {
         const input = document.getElementById("image-buffer")
@@ -73,4 +46,6 @@ $(window).on('load', async () => {
         link.download = "test.png";
         link.click();
     })
+
+
 });
