@@ -2,8 +2,12 @@
     <img id="image-preview">
 </div>
 
-<form id="img-form">
-    <input id="ufile" name="ufile" type="file" accept="image/jpeg,image/png"><br>
+<form id="file-select-form" class="">
+    <label id="file-select-label" for="file-select-input">
+        <h1 id="image-select-guide"><i class="far fa-file-image"></i> Drop image here or click to select</h1>
+        <input type="file" id="file-select-input" style="display:none;">
+        <img id="image-sample" src="images/face-blur-sample.png">
+    </label>
 </form>
 
 <button type="button" id="process">process</button>

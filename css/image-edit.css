@@ -5,8 +5,41 @@
 #image-preview {
     width: var(--main-content-width);
     height: 70vh;
+    display: none;
+}
+
+#image-sample {
+    width: 70vw;
+}
+
+#file-select-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--main-content-width);
+    border: dashed 3px var(--body-color2);
+    border-radius: 10px;
+    background-color: var(--body-color4);
+}
+
+#file-select-label {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 3% 5% 5% 5%;
 }
 
 #image-edit {
     text-align: center;
+    padding-top: 3vh;
+}
+
+#image-select-guide {
+    color: var(--body-color2);
+    font-size: 2em;
+    margin-bottom: 3%;
+    border-bottom: solid 3px var(--body-color2);
+    padding-bottom: 1%;
 }
