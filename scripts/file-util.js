@@ -4,6 +4,7 @@ const fadeInPreviewSec = 3
 $(window).on('load', async () => {
     let canvas = $("#image-buffer");
     let preview = $("#preview-image")
+    let selectedFileName
 
     $("input[type=file]").change(function () {
         fileToEditor(this.files[0])
@@ -13,6 +14,14 @@ $(window).on('load', async () => {
         alert("File API がサポートされていません。")
         return false
     }
+
+    $("#download-btn").click(() => {
+        const canvas = document.getElementById("image-buffer");
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = selectedFileName;
+        link.click();
+    })
 
     const isValidFile = file => {
         if (file.type.indexOf("image") < 0) {
@@ -28,7 +37,7 @@ $(window).on('load', async () => {
 
     const fileToEditor = file => {
         const fr = new FileReader()
-        const selectedFileName = file.name
+        selectedFileName = file.name
         let image = new Image();
 
         if (file == null || !isValidFile(file)) return false
