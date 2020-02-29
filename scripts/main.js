@@ -6,7 +6,7 @@ const showSec = 1
 $(window).on('load', async () => {
     setTimeout(() => {
         splash.finish(blurSec)
-    }, showSec)
+    }, showSec * 1000)
 
     const blurRadius = 15
     const minConfidence = 0.1
