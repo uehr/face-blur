@@ -1,6 +1,9 @@
+import * as editor from "./image-editor.js"
+const fadeInPreviewSec = 3
+
 $(window).on('load', async () => {
     let canvas = $("#image-buffer");
-    let preview = $("#image-preview")
+    let preview = $("#preview-image")
 
     $("input[type=file]").change(function () {
         fileToEditor(this.files[0])
@@ -40,7 +43,11 @@ $(window).on('load', async () => {
                 ctx.drawImage(image, 0, 0, width, height);
             }
             image.src = evt.target.result;
-            preview.attr("src", evt.target.result)
+            new Promise(res => {
+                res(preview.attr("src", evt.target.result))
+            }).then(_ => {
+                editor.showPreview(fadeInPreviewSec)
+            })
         }
 
         fr.readAsDataURL(file);

@@ -1,5 +1,11 @@
 <div id="preview">
-    <img id="image-preview">
+    <img id="preview-image">
+    <h1 id="preview-text"><i class="fas fa-paint-brush"></i> Preview</h1>
+    <div id="editor-tools">
+        <button type="button" class="btn btn-dark btn-lg" id="blur-btn"><i class="fas fa-play"></i> Blur</button>
+        <button type="button" class="btn btn-dark btn-lg" id="download-btn"><i class="fas fa-cloud-download-alt"></i>
+            Download</button>
+    </div>
 </div>
 
 <form id="file-select-form" class="">
@@ -10,6 +16,4 @@
     </label>
 </form>
 
-<button type="button" id="process">process</button>
-<button type="button" id="download">download</button>
 <canvas id="image-buffer"></canvas>

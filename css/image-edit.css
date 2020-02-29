@@ -2,9 +2,49 @@
     display: none;
 }
 
-#image-preview {
+#preview {
+    position: relative;
+    display: none;
+    padding: 0;
     width: var(--main-content-width);
-    height: 70vh;
+    margin: auto;
+    margin-bottom: var(--main-content-wrap-padding);
+}
+
+#preview-image {
+    width: var(--main-content-width);
+    /* height: 70vh; */
+    border: solid 5px var(--body-color4);
+    border-radius: 10px;
+    margin: 0;
+}
+
+#preview-text {
+    font-size: 2em;
+    color: var(--body-color2);
+    background-color: var(--body-color4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.3em;
+    opacity: 0.9;
+}
+
+#editor-tools {
+    position: absolute;
+    bottom: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#blur-btn {
+    font-size: 3em;
+    display: none;
+}
+
+#download-btn {
+    font-size: 3em;
     display: none;
 }
 
