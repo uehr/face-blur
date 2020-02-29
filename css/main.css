@@ -1,13 +1,21 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans';
 }
 
-#image-buffer {
-    display: none;
+:root {
+  --theme-color: #00e091;
+  --body-color1: #1E1F26;
+  --body-color2: #EEEEEE;
+  --body-color3: #f7f7f7;
+  --body-color4: #2c2c33;
+  --font-color1: #d6d6d6;
+  --font-color2: black;
+  --footer-color: #1E1F26;
+  --header-color: #1E1F26;
 }
 
-#image-preview {
-    width: 70vw;
-    height: 70vh;
+body {
+    background-color: var(--body-color1);
 }

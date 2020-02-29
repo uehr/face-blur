@@ -1,0 +1,25 @@
+#splash {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--body-color1);
+    position: fixed;
+}
+
+#splash-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 25vw;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(5px);
+  }
+}

@@ -3,31 +3,40 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/main.css">
     <title>face-blur | blur face for privacy</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- jquery -->
     <script src="scripts/jquery-3.3.1.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- face-api -->
     <script src="scripts/face-api.min.js"></script>
 
     <!-- index -->
+    <link rel="stylesheet" href="css/main.css">
     <script type="module" src="scripts/main.js"></script>
 
+    <!-- loading html parts -->
+    <script>
+        $(function () {
+            $("#splash").load("views/splash.html")
+            $("#header").load("views/header.html")
+            $("#image-edit").load("views/image-edit.html")
+            $("#footer").load("views/footer.html")
+        })
+    </script>
+
 <body>
-    <div id="preview">
-        <img id="image-preview">
-    </div>
-
-    <form id="img-form">
-        <input id="ufile" name="ufile" type="file" accept="image/jpeg,image/png"><br>
-    </form>
-
-    <button type="button" id="process">process</button>
-
-    <canvas id="image-buffer"></canvas>
-    <p>Welcome to face-blur :)</p>
+    <div id="splash"></div>
+    <div id="header"></div>
+    <div id="image-edit"></div>
+    <div id="footer"></div>
 </body>
 
 </html>

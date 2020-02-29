@@ -1,6 +1,13 @@
 import * as StackBlur from "./stackblur-es.js";
+import * as splash from "./splash.js"
+const blurSec = 2
+const showSec = 1
 
 $(window).on('load', async () => {
+    setTimeout(() => {
+        splash.finish(blurSec)
+    }, showSec)
+
     await faceapi.loadSsdMobilenetv1Model('/models')
     const blurRadius = 15
     const minConfidence = 0.1
