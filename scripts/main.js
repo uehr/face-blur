@@ -8,13 +8,13 @@ $(window).on('load', async () => {
         splash.finish(blurSec)
     }, showSec)
 
-    await faceapi.loadSsdMobilenetv1Model('/models')
     const blurRadius = 15
     const minConfidence = 0.1
     const maxResults = 500
     const marginScale = 1.5
     let preview = $("#image-preview")
     let canvas = $("#image-buffer");
+    await faceapi.loadSsdMobilenetv1Model('/models')
 
     $("#ufile").change(function () {
         if (!this.files.length) {
