@@ -10,6 +10,14 @@ export const showPreview = sec => {
     $(downloadBtnQuery).hide()
 }
 
+export const blurBtnToDownloadBtn = sec => {
+    const btnAnimateMSec = sec / 2 * 1000
+    $(blurBtnQuery).fadeOut(btnAnimateMSec)
+    setTimeout(() => {
+        $(downloadBtnQuery).fadeIn(btnAnimateMSec)
+    }, btnAnimateMSec)
+}
+
 // 顔の大きさに応じてぼかしをスケーリング
 const blurScale = (w, h) => {
     return (w * h) / 700
@@ -41,11 +49,7 @@ $(window).on('load', async () => {
             })
         }).then(_ => {
             preview.attr("src", bufferCanvas.toDataURL())
-            const btnAnimateMSec = btnSwitchSec / 2 * 1000
-            $(blurBtnQuery).fadeOut(btnAnimateMSec)
-            setTimeout(() => {
-                $(downloadBtnQuery).fadeIn(btnAnimateMSec)
-            }, btnAnimateMSec)
+            blurBtnToDownloadBtn(btnSwitchSec)
         })
 
     })
