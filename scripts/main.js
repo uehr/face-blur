@@ -2,7 +2,7 @@ import * as StackBlur from "./stackblur-es.js";
 import * as splash from "./splash.js"
 const splashBlurSec = 2
 const splashShowSec = 1
-const splashFadeoutSec = 3
+const splashFadeoutSec = 1
 
 // 顔の大きさに応じてぼかしをスケーリング
 const blurScale = (w, h) => {
