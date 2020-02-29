@@ -4,12 +4,16 @@ const splashBlurSec = 2
 const splashShowSec = 1
 const splashFadeoutSec = 3
 
+// 顔の大きさに応じてぼかしをスケーリング
+const blurScale = (w, h) => {
+    return (w * h) / 700
+}
+
 $(window).on('load', async () => {
     setTimeout(() => {
         splash.finish(splashBlurSec, splashFadeoutSec)
     }, splashShowSec * 1000)
 
-    const blurRadius = 15
     const minConfidence = 0.1
     const maxResults = 500
     const marginScale = 1
@@ -30,7 +34,8 @@ $(window).on('load', async () => {
                     const y = parseInt(face.box.top)
                     const w = parseInt(face.box.width * marginScale)
                     const h = parseInt(face.box.height * marginScale)
-                    StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, blurRadius)
+                    const scale = blurScale(w, h)
+                    StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, scale)
                 }))
             })
         }).then(_ => {
