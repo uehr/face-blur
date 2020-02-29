@@ -1,14 +1,7 @@
 #description {
     text-align: center;
-    padding: 30px;
-}
-
-#description-text {
-    color: var(--font-color1);
-    margin-top: 10px;
-    font-size: 3vw;
 }
 
 #description-img {
-    width: 70vw;
+    width: var(--main-content-width);
 }

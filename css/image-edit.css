@@ -3,7 +3,7 @@
 }
 
 #image-preview {
-    width: 70vw;
+    width: var(--main-content-width);
     height: 70vh;
 }
 

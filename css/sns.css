@@ -1,0 +1,9 @@
+#sns {
+    background-color: var(--body-color4);
+    width: var(--sns-width);
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    height: 100vh;
+    bottom: 0;
+}

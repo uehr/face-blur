@@ -14,8 +14,22 @@
   --font-color2: black;
   --footer-color: #1E1F26;
   --header-color: #1E1F26;
+  --header-height: 10vh;
+  --header-logo-height: 7vh;
+  --sns-width: 10vw;
+  --main-content-wrap-padding: 20px;
+  --main-content-width: 80vw;
 }
 
 body {
     background-color: var(--body-color1);
+}
+
+#main-content-wrap {
+    margin-top: var(--header-height);
+    margin-left: var(--sns-width);
+    padding: var(--main-content-wrap-padding);
+}
+
+#split-bar {
 }

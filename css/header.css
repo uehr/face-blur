@@ -1,9 +1,18 @@
 #header {
     text-align: center;
     background-color: var(--body-color4);
+    width: calc(100vw - var(--sns-width));
+    top: 0;
+    right: 0;
+    position: fixed;
+    border-left: solid 5px var(--body-color1);
+    z-index: 2;
+    height: var(--header-height);
+    opacity: 0.9;
 }
 
 #header-logo {
-    height: 8vh;
-    margin: 1%;
+    height: var(--header-logo-height);
+    margin-top: calc((var(--header-height) - var(--header-logo-height)) / 2);
+    margin-bottom: calc((var(--header-height) - var(--header-logo-height)) / 2);
 }
