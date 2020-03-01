@@ -54,8 +54,10 @@ export const setFileListener = () => {
 
         a.style.display = 'none'
         document.body.appendChild(a)
-        a.click()
-        document.body.removeChild(a)
+        setTimeout(() => {
+            a.click()
+            document.body.removeChild(a)
+        }, 500)
     }
 
     const fileToEditor = file => {
