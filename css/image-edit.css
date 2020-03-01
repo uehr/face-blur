@@ -28,7 +28,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0.3em;
+    padding: 0.3em 1em 0.3em 0.7em;
     opacity: 0.9;
 }
 
