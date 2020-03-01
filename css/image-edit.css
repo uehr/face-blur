@@ -99,7 +99,7 @@
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    padding-top: 1%;
+    padding-top: 3%;
 }
 
 #image-select-guide {
@@ -122,7 +122,7 @@
 
     #preview {
         box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
-        margin-bottom: 0;
+        margin-bottom: 3%;
     }
 
     #file-select-form {
