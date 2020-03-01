@@ -4,11 +4,8 @@ const splashShowSec = 1
 const splashFadeoutSec = 1
 
 $(window).on('load', async () => {
-    setTimeout(() => {
-        splash.finish(splashBlurSec, splashFadeoutSec)
-    }, splashShowSec * 1000)
-
     console.log("Preparing")
     await faceapi.loadSsdMobilenetv1Model('/models')
+    splash.finish(splashBlurSec, splashFadeoutSec)
     console.log("Ready")
 });
