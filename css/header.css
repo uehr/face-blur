@@ -5,7 +5,6 @@
     top: 0;
     left: 0;
     position: fixed;
-    border-left: solid 5px var(--body-color1);
     z-index: 2;
     height: var(--header-height);
     opacity: 0.9;
