@@ -20,8 +20,7 @@
 
 .share-btn:hover {
     color: var(--body-color3);
-    animation: blur-btn 0.5s;
-    animation-fill-mode: forwards;
+    animation: blur-btn 0.5s forwards;
 }
 
 #header-logo {
