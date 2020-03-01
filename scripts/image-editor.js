@@ -32,7 +32,7 @@ export const finishProcessingView = async (sec) => {
 
 // 顔の大きさに応じてぼかしをスケーリング
 const blurScale = (w, h) => {
-    return w / 10
+    return w / 5
 }
 
 export const blurFace = () => {
