@@ -8,5 +8,7 @@ $(window).on('load', async () => {
         splash.finish(splashBlurSec, splashFadeoutSec)
     }, splashShowSec * 1000)
 
+    console.log("Preparing")
     await faceapi.loadSsdMobilenetv1Model('/models')
+    console.log("Ready")
 });
