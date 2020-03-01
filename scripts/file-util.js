@@ -1,5 +1,5 @@
 import * as editor from "./image-editor.js"
-const fadeInPreviewSec = 3
+const fadeInPreviewSec = 2
 
 $(window).on('load', async () => {
     let canvas = $("#image-buffer");
