@@ -8,10 +8,34 @@
     z-index: 2;
     height: var(--header-height);
     opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.share-btn {
+    font-size: 3em;
+    color: var(--body-color2);
+}
+
+.share-btn:hover {
+    color: var(--body-color3);
+    animation: blur-btn 0.5s;
+    animation-fill-mode: forwards;
 }
 
 #header-logo {
     height: var(--header-logo-height);
     margin-top: calc((var(--header-height) - var(--header-logo-height)) / 2);
     margin-bottom: calc((var(--header-height) - var(--header-logo-height)) / 2);
+    margin-right: 10px;
+}
+
+@keyframes blur-btn {
+  0% {
+    filter: blur(0);
+  }
+  100% {
+    filter: blur(0.05em);
+  }
 }
