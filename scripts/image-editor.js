@@ -1,8 +1,11 @@
 import * as StackBlur from "./stackblur-es.js";
 const previewQuery = "#preview"
+const previewImageQuery = "#preview-image"
 const blurBtnQuery = "#blur-btn"
 const downloadBtnQuery = "#download-btn"
-const btnSwitchSec = 2
+const processingAnimeQuery = "#loading-spinner"
+const btnSwitchSec = 1
+const processingViewOpacity = 0.5
 
 export const showPreview = sec => {
     $(previewQuery).show(sec * 1000)
@@ -16,6 +19,22 @@ export const blurBtnToDownloadBtn = sec => {
     setTimeout(() => {
         $(downloadBtnQuery).fadeIn(btnAnimateMSec)
     }, btnAnimateMSec)
+}
+
+export const startProcessingView = async (sec, previewOpacity) => {
+    return (() => {
+        $(blurBtnQuery).fadeOut(sec * 1000)
+        $(processingAnimeQuery).fadeIn(sec * 1000)
+        $(previewImageQuery).animate({ opacity: previewOpacity, }, { duration: sec * 1000, })
+    })()
+}
+
+export const finishProcessingView = async (sec) => {
+    return (() => {
+        $(downloadBtnQuery).fadeIn(sec * 1000)
+        $(processingAnimeQuery).fadeOut(sec * 1000)
+        $(previewImageQuery).animate({ opacity: 1, }, { duration: sec * 1000, })
+    })()
 }
 
 // 顔の大きさに応じてぼかしをスケーリング
@@ -33,26 +52,27 @@ $(window).on('load', async () => {
         const input = document.getElementById("image-buffer")
         const bufferCanvas = $("#image-buffer").get(0)
 
-        faceapi.detectAllFaces(input, new faceapi.SsdMobilenetv1Options({
-            minConfidence: minConfidence,
-            maxResults: maxResults
-        })).then(faces => {
-            return new Promise(res => {
-                res(faces.forEach(face => {
-                    const x = parseInt(face.box.left)
-                    const y = parseInt(face.box.top)
-                    const w = parseInt(face.box.width * marginScale)
-                    const h = parseInt(face.box.height * marginScale)
-                    const scale = blurScale(w, h)
-                    StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, scale)
-                }))
+        startProcessingView(btnSwitchSec, processingViewOpacity)
+
+        setTimeout(() => {
+            faceapi.detectAllFaces(input, new faceapi.SsdMobilenetv1Options({
+                minConfidence: minConfidence,
+                maxResults: maxResults
+            })).then(faces => {
+                return new Promise(res => {
+                    res(faces.forEach(face => {
+                        const x = parseInt(face.box.left)
+                        const y = parseInt(face.box.top)
+                        const w = parseInt(face.box.width * marginScale)
+                        const h = parseInt(face.box.height * marginScale)
+                        const scale = blurScale(w, h)
+                        StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, scale)
+                    }))
+                })
+            }).then(_ => {
+                preview.attr("src", bufferCanvas.toDataURL())
+                finishProcessingView(btnSwitchSec)
             })
-        }).then(_ => {
-            preview.attr("src", bufferCanvas.toDataURL())
-            blurBtnToDownloadBtn(btnSwitchSec)
-        })
-
+        }, btnSwitchSec * 1000)
     })
-
-
 })
