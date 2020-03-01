@@ -3,9 +3,9 @@ const splashBlurSec = 2
 const splashShowSec = 1
 const splashFadeoutSec = 1
 
-$(window).on('load', async () => {
+window.addEventListener("load", async () => {
     console.log("Preparing")
     await faceapi.loadSsdMobilenetv1Model('/models')
     splash.finish(splashBlurSec, splashFadeoutSec)
     console.log("Ready")
-});
+}, false)
