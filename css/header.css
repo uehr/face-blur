@@ -1,9 +1,9 @@
 #header {
     text-align: center;
     background-color: var(--body-color4);
-    width: calc(100vw - var(--sns-width));
+    width: 100vw;
     top: 0;
-    right: 0;
+    left: 0;
     position: fixed;
     border-left: solid 5px var(--body-color1);
     z-index: 2;
