@@ -60,14 +60,19 @@ $(window).on('load', async () => {
                 maxResults: maxResults
             })).then(faces => {
                 return new Promise(res => {
-                    res(faces.forEach(face => {
-                        const x = parseInt(face.box.left)
-                        const y = parseInt(face.box.top)
-                        const w = parseInt(face.box.width * marginScale)
-                        const h = parseInt(face.box.height * marginScale)
-                        const scale = blurScale(w, h)
-                        StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, scale)
-                    }))
+                    if (faces.length) {
+                        res(faces.forEach(face => {
+                            const x = parseInt(face.box.left)
+                            const y = parseInt(face.box.top)
+                            const w = parseInt(face.box.width * marginScale)
+                            const h = parseInt(face.box.height * marginScale)
+                            const scale = blurScale(w, h)
+                            StackBlur.canvasRGBA(bufferCanvas, x, y, w, h, scale)
+                        }))
+                    } else {
+                        alert("Unable to detect face")
+                        res(false)
+                    }
                 })
             }).then(_ => {
                 preview.attr("src", bufferCanvas.toDataURL())
