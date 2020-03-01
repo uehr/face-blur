@@ -30,6 +30,18 @@
     opacity: 0.9;
 }
 
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    margin: auto;
+    font-size: 5em;
+    color: var(--body-color2);
+    display: none;
+}
+
 #editor-tools {
     position: absolute;
     bottom: 3%;
