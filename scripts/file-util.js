@@ -19,8 +19,7 @@ export const setFileListener = () => {
         const cvs = document.getElementById("image-buffer")
         const base64 = cvs.toDataURL()
         const blob = base64toBlob(base64)
-        const objUrl = URL.createObjectURL(blob)
-        fileDownload(objUrl, selectedFileName)
+        saveAs(blob, selectedFileName)
     })
 
     const isValidFile = file => {
@@ -45,19 +44,6 @@ export const setFileListener = () => {
         }
         var blob = new Blob([buf], { type: mime });
         return blob;
-    }
-
-    const fileDownload = (src, name) => {
-        const a = document.createElement('a')
-        a.href = src
-        a.download = name
-
-        a.style.display = 'none'
-        document.body.appendChild(a)
-        setTimeout(() => {
-            a.click()
-            document.body.removeChild(a)
-        }, 500)
     }
 
     const fileToEditor = file => {
