@@ -56,6 +56,9 @@ $(window).on('load', async () => {
                 res(preview.attr("src", evt.target.result))
             }).then(_ => {
                 editor.showPreview(fadeInPreviewSec)
+                setTimeout(() => {
+                    editor.blurFace()
+                }, fadeInPreviewSec * 1000)
             })
         }
 
