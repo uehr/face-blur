@@ -23,6 +23,18 @@
     animation: blur-btn 0.5s forwards;
 }
 
+#line-btn:hover {
+    color: var(--line-color);
+}
+
+#facebook-btn:hover {
+    color: var(--facebook-color);
+}
+
+#twitter-btn:hover {
+    color: var(--twitter-color);
+}
+
 #header-logo {
     height: var(--header-logo-height);
     margin-top: calc((var(--header-height) - var(--header-logo-height)) / 2);
