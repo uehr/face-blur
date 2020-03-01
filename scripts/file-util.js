@@ -1,7 +1,7 @@
 import * as editor from "./image-editor.js"
 const fadeInPreviewSec = 2
 
-window.addEventListener("load", function () {
+export const setFileListener = () => {
     let canvas = $("#image-buffer");
     let preview = $("#preview-image")
     let selectedFileName
@@ -82,4 +82,4 @@ window.addEventListener("load", function () {
     droppable.bind("dragenter", cancelEvent)
     droppable.bind("dragover", cancelEvent)
     droppable.bind("drop", handleDroppedFile)
-}, false)
+}
