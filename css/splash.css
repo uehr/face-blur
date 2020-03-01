@@ -1,4 +1,8 @@
 #splash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: var(--body-color1);
@@ -9,13 +13,17 @@
 }
 
 #splash-logo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
     width: 25vw;
+    margin-left: center;
+    margin-right: center;
+}
+
+#splash-text {
+    margin-left: center;
+    margin-right: center;
+    font-size: 1em;
+    color: var(--body-color2);
+    text-align: center;
 }
 
 @keyframes blur {
