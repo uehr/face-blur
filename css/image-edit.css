@@ -67,11 +67,25 @@
 
 #file-select-form {
     width: var(--main-content-width);
-    border: dashed 3px var(--body-color2);
+    border: dashed 2px var(--body-color2);
     border-radius: 10px;
     background-color: var(--body-color4);
     margin: auto;
     min-width: 0;
+    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
+}
+
+#file-select-form:hover {
+    animation: form-hover 1s forwards;
+}
+
+@keyframes form-hover {
+  0% {
+    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
+  }
 }
 
 #file-select-label {
