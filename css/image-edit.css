@@ -9,6 +9,7 @@
     width: var(--main-content-width);
     margin: auto;
     margin-bottom: var(--main-content-wrap-padding);
+    min-width: 0;
 }
 
 #preview-image {
@@ -65,18 +66,16 @@
 }
 
 #file-select-form {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     width: var(--main-content-width);
     border: dashed 3px var(--body-color2);
     border-radius: 10px;
     background-color: var(--body-color4);
+    margin: auto;
+    min-width: 0;
 }
 
 #file-select-label {
     display: block;
-    margin: 0;
     width: 100%;
     height: 100%;
     cursor: pointer;
@@ -85,7 +84,13 @@
 
 #image-edit {
     text-align: center;
-    padding-top: 3vh;
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 #image-select-guide {
