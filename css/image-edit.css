@@ -58,7 +58,7 @@
 }
 
 #image-sample {
-    width: 70vw;
+    width: 100%;
 }
 
 #file-select-form {
@@ -109,4 +109,31 @@
     border-bottom: solid 3px var(--body-color2);
     padding-bottom: 2%;
     margin-bottom: 5%;
+}
+
+@media screen and (max-width : 500px) {
+    #image-select-guide {
+        font-size: 1.5em;
+    }
+
+    #download-btn {
+        font-size: 1.5em;
+    }
+
+    #preview {
+        box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
+    }
+
+    #file-select-form {
+        box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
+    }
+
+    @keyframes form-hover {
+        0% {
+            box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
+        }
+        100% {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
+        }
+    }
 }

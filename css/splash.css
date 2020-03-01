@@ -34,3 +34,13 @@
     filter: blur(5px);
   }
 }
+
+@media screen and (max-width : 500px) {
+    #splash-logo {
+        width: 70vw;
+    }
+
+    #splash-text {
+        font-size: 2em;
+    }
+}
