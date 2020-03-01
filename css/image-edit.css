@@ -65,7 +65,6 @@
     border: dashed 2px var(--body-color2);
     border-radius: 10px;
     background-color: var(--body-color4);
-    margin: auto;
     min-width: 0;
     box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
 }
