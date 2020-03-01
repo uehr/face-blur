@@ -16,11 +16,11 @@ export const setFileListener = () => {
     }
 
     $("#download-btn").click(() => {
-        const canvas = document.getElementById("image-buffer");
-        const link = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
-        link.download = selectedFileName;
-        link.click();
+        const cvs = document.getElementById("image-buffer")
+        const base64 = cvs.toDataURL()
+        const blob = base64toBlob(base64)
+        const objUrl = URL.createObjectURL(blob)
+        fileDownload(objUrl, selectedFileName)
     })
 
     const isValidFile = file => {
@@ -33,6 +33,29 @@ export const setFileListener = () => {
         }
 
         return true
+    }
+
+    function base64toBlob(base64) {
+        var tmp = base64.split(',');
+        var data = atob(tmp[1]);
+        var mime = tmp[0].split(':')[1].split(';')[0];
+        var buf = new Uint8Array(data.length);
+        for (var i = 0; i < data.length; i++) {
+            buf[i] = data.charCodeAt(i);
+        }
+        var blob = new Blob([buf], { type: mime });
+        return blob;
+    }
+
+    const fileDownload = (src, name) => {
+        const a = document.createElement('a')
+        a.href = src
+        a.download = name
+
+        a.style.display = 'none'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
     }
 
     const fileToEditor = file => {
