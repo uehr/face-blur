@@ -7,8 +7,7 @@
     display: none;
     padding: 0;
     width: var(--main-content-width);
-    margin: auto;
-    margin-bottom: var(--main-content-wrap-padding);
+    margin: 0 auto 5% auto;
     min-width: 0;
     box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
 }
