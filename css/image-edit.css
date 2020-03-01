@@ -62,7 +62,7 @@
 
 #file-select-form {
     width: var(--main-content-width);
-    border: dashed 2px var(--body-color2);
+    border: dashed 5px var(--body-color2);
     border-radius: 10px;
     background-color: var(--body-color4);
     min-width: 0;
