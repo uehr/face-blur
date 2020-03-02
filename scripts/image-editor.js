@@ -3,6 +3,7 @@ const previewQuery = "#preview"
 const previewImageQuery = "#preview-image"
 const downloadBtnQuery = "#download-btn"
 const processingAnimeQuery = "#loading-spinner"
+const imageEditorQuery = "#image-edit"
 const btnSwitchSec = 1
 const processingViewOpacity = 0.5
 const minConfidence = 0.1
@@ -13,6 +14,8 @@ const marginScale = 1
 export const showPreview = sec => {
     $(previewQuery).show(sec * 1000)
     $(downloadBtnQuery).hide()
+    // プレビューとファイル選択領域を上寄せ
+    $(imageEditorQuery).css("justify-content", "flex-start")
 }
 
 export const startProcessingView = async (sec, previewOpacity) => {
