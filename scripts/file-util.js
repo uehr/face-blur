@@ -1,4 +1,5 @@
 import * as editor from "./image-editor.js"
+const clickEventType = ((window.ontouchstart !== null) ? 'click' : 'touchend');
 const fadeInPreviewSec = 2
 
 export const setFileListener = () => {
@@ -15,7 +16,7 @@ export const setFileListener = () => {
         return false
     }
 
-    $("#download-btn").click(() => {
+    $(document).on(clickEventType, "#download-btn", () => {
         const cvs = document.getElementById("image-buffer")
         const base64 = cvs.toDataURL()
         const blob = base64toBlob(base64)
