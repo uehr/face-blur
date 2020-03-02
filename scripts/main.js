@@ -1,5 +1,5 @@
 import * as splash from "./splash.js"
-import * as futil from "./file-util.js"
+import * as futil from "./file-select.js"
 const splashBlurSec = 2
 const splashShowSec = 1
 const splashFadeoutSec = 1

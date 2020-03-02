@@ -1,0 +1,49 @@
+#file-select-form {
+    width: var(--main-content-width);
+    border: dashed 5px var(--body-color2);
+    border-radius: 10px;
+    background-color: var(--body-color4);
+    min-width: 0;
+    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
+    margin: 0 auto;
+}
+
+#file-select-form:hover {
+    animation: form-hover 1s forwards;
+}
+
+@keyframes form-hover {
+  0% {
+    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
+  }
+}
+
+#file-select-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 3% 5% 5% 5%;
+}
+
+@media screen and (max-width : 500px) {
+    #file-select-form {
+        box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
+    }
+
+    #file-select-label {
+        padding: 1% 3% 3% 3%;
+    }
+
+    @keyframes form-hover {
+        0% {
+            box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
+        }
+        100% {
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
+        }
+    }
+}

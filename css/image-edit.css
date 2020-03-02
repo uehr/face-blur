@@ -20,6 +20,14 @@
     margin: 0;
 }
 
+#editor-tools {
+    position: absolute;
+    bottom: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 #preview-text {
     font-size: 2em;
     color: var(--body-color2);
@@ -43,14 +51,6 @@
     display: none;
 }
 
-#editor-tools {
-    position: absolute;
-    bottom: 3%;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
 #download-btn {
     font-size: 3em;
     display: none;
@@ -59,37 +59,6 @@
 
 #image-sample {
     width: 100%;
-}
-
-#file-select-form {
-    width: var(--main-content-width);
-    border: dashed 5px var(--body-color2);
-    border-radius: 10px;
-    background-color: var(--body-color4);
-    min-width: 0;
-    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
-    margin: 0 auto;
-}
-
-#file-select-form:hover {
-    animation: form-hover 1s forwards;
-}
-
-@keyframes form-hover {
-  0% {
-    box-shadow: 0px 15px 15px 15px rgba(0,0,0,0.6);
-  }
-  100% {
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
-  }
-}
-
-#file-select-label {
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    padding: 3% 5% 5% 5%;
 }
 
 #image-edit {
@@ -121,22 +90,5 @@
     #preview {
         box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
         margin-bottom: 3%;
-    }
-
-    #file-select-form {
-        box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
-    }
-
-    #file-select-label {
-        padding: 1% 3% 3% 3%;
-    }
-
-    @keyframes form-hover {
-        0% {
-            box-shadow: 0px 7px 7px 7px rgba(0,0,0,0.6);
-        }
-        100% {
-            box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.6);
-        }
     }
 }
