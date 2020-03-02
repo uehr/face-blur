@@ -19,19 +19,18 @@
 }
 
 .share-btn.hover {
-    color: var(--body-color3);
     animation: blur-btn 0.5s forwards;
 }
 
-#line-btn.hover {
+#line-btn.hover, #line-btn:hover {
     color: var(--line-color);
 }
 
-#facebook-btn.hover {
+#facebook-btn.hover, #facebook-btn:hover {
     color: var(--facebook-color);
 }
 
-#twitter-btn.hover {
+#twitter-btn.hover, #twitter-btn:hover {
     color: var(--twitter-color);
 }
 
