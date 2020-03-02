@@ -1,0 +1,40 @@
+#footer {
+    padding: 0.5% 1%;
+    height: var(--footer-height);
+    margin: 3% 0 1%;
+}
+
+#footer-text {
+    text-align: center;
+    margin-bottom: 0;
+    color: var(--body-color2);
+    font-size: 1.5em;
+}
+
+#twitter-link {
+    color: var(--twitter-color);
+}
+
+#twitter-link:hover {
+    text-decoration: none;
+    animation: link-hover 0.5s forwards;
+}
+
+@keyframes link-hover {
+  0% {
+    filter: blur(0)
+  }
+  100% {
+    filter: blur(0.1em)
+  }
+}
+
+@media screen and (max-width : 500px) {
+    #footer {
+        margin: 5% 0;
+    }
+
+    #footer-text {
+        font-size: 1em;
+    }
+}
