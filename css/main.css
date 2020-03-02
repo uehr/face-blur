@@ -64,4 +64,8 @@ body {
         --main-content-wrap-padding: 0px;
         --main-content-width: 95vw;
     }
+
+    #main-content-wrap {
+        padding-top: 15vh;
+    }
 }

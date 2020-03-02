@@ -3,7 +3,7 @@ const previewQuery = "#preview"
 const previewImageQuery = "#preview-image"
 const downloadBtnQuery = "#download-btn"
 const processingAnimeQuery = "#loading-spinner"
-const imageEditorQuery = "#image-edit"
+const mainContentWrapQuery = "#main-content-wrap"
 const btnSwitchSec = 1
 const processingViewOpacity = 0.5
 const minConfidence = 0.1
@@ -13,8 +13,8 @@ const marginScale = 1
 
 export const showPreview = sec => {
     $(downloadBtnQuery).hide()
-    // ファイル選択領域を上寄せ
-    $(imageEditorQuery).animate({ "margin-top": 0, }, { duration: sec * 1000, })
+    // 編集コンテンツを上寄せ
+    $(mainContentWrapQuery).animate({ "padding-top": 0, }, { duration: sec * 1000, })
     $(previewQuery).show(sec * 1000)
 }
 
