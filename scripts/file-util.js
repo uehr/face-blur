@@ -1,14 +1,21 @@
 import * as editor from "./image-editor.js"
 const clickEventType = ((window.ontouchstart !== null) ? 'click' : 'touchend');
 const fadeInPreviewSec = 2
+const bufferCanvasId = "image-buffer"
+const bufferCanvasQuery = `#${bufferCanvasId}`
 
 export const setFileListener = () => {
-    let canvas = $("#image-buffer");
+    let canvas = $(bufferCanvasQuery);
     let preview = $("#preview-image")
     let selectedFileName
 
     $("input[type=file]").change(function () {
-        fileToEditor(this.files[0])
+        const file = this.files[0]
+        selectedFileName = file.name
+        fileToEditor(file, fadeInPreviewSec)
+        setTimeout(() => {
+            editor.blurFace()
+        }, fadeInPreviewSec * 1000)
     })
 
     if (!window.FileReader) {
@@ -17,10 +24,7 @@ export const setFileListener = () => {
     }
 
     $(document).on(clickEventType, "#download-btn", () => {
-        const cvs = document.getElementById("image-buffer")
-        const base64 = cvs.toDataURL()
-        const blob = base64toBlob(base64)
-        saveAs(blob, selectedFileName)
+        downloadCanvas(bufferCanvasId, selectedFileName)
     })
 
     const isValidFile = file => {
@@ -47,11 +51,16 @@ export const setFileListener = () => {
         return blob;
     }
 
-    const fileToEditor = file => {
-        const fr = new FileReader()
-        selectedFileName = file.name
-        let image = new Image();
+    const downloadCanvas = (cvsId, fileName) => {
+        const cvs = document.getElementById(cvsId)
+        const base64 = cvs.toDataURL()
+        const blob = base64toBlob(base64)
+        saveAs(blob, fileName)
+    }
 
+    const fileToEditor = (file, fadeInSec) => {
+        const fr = new FileReader()
+        let image = new Image();
         if (file == null || !isValidFile(file)) return false
 
         let ctx = canvas[0].getContext('2d');
@@ -67,10 +76,7 @@ export const setFileListener = () => {
             new Promise(res => {
                 res(preview.attr("src", evt.target.result))
             }).then(_ => {
-                editor.showPreview(fadeInPreviewSec)
-                setTimeout(() => {
-                    editor.blurFace()
-                }, fadeInPreviewSec * 1000)
+                editor.showPreview(fadeInSec)
             })
         }
 
