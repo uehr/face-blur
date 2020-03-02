@@ -40,7 +40,7 @@ body {
     color: var(--body-color2);
 }
 
-.btn:hover{
+.btn.hover{
     animation: btn-hover 1s forwards; 
 }
 

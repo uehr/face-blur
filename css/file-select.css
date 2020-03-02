@@ -9,7 +9,7 @@
     position: relative;
 }
 
-#file-select-form:hover {
+#file-select-form.hover {
     animation: form-hover 1s forwards;
 }
 
