@@ -95,7 +95,7 @@
     min-height: 100%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
@@ -131,6 +131,10 @@
 
     #file-select-label {
         padding: 1% 3% 3% 3%;
+    }
+
+    #image-edit {
+        margin-top: 15vh;
     }
 
     @keyframes form-hover {

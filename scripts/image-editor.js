@@ -12,10 +12,10 @@ const marginScale = 1
 
 
 export const showPreview = sec => {
-    $(previewQuery).show(sec * 1000)
     $(downloadBtnQuery).hide()
-    // プレビューとファイル選択領域を上寄せ
-    $(imageEditorQuery).css("justify-content", "flex-start")
+    // ファイル選択領域を上寄せ
+    $(imageEditorQuery).animate({ "margin-top": 0, }, { duration: sec * 1000, })
+    $(previewQuery).show(sec * 1000)
 }
 
 export const startProcessingView = async (sec, previewOpacity) => {
