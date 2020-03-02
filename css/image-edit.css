@@ -54,6 +54,7 @@
 #download-btn {
     font-size: 3em;
     display: none;
+    cursor: pointer;
 }
 
 #image-sample {
