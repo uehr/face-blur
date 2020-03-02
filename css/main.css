@@ -44,6 +44,10 @@ body {
     animation: btn-hover 1s forwards; 
 }
 
+.br-span {
+  display: inline-block;
+}
+
 @keyframes btn-hover {
   0% {
     background-color: var(--body-color4);
