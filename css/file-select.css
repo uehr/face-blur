@@ -58,11 +58,17 @@
     }
 
     #image-select-guide {
+        width: 100%;
+        border-right: 0px;
+        border-radius: 0px;
+    }
+
+    #image-select-guide {
         font-size: 1.5em;
     }
 
     #file-select-label {
-        padding: 5% 2% 2%;
+        padding: 15% 2% 2%;
     }
 
     @keyframes form-hover {
