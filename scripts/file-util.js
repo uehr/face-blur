@@ -1,11 +1,14 @@
 import * as editor from "./image-editor.js"
-const clickEventType = ((window.ontouchstart !== null) ? 'click' : 'touchend');
 const fadeInPreviewSec = 2
 const bufferCanvasId = "image-buffer"
 const bufferCanvasQuery = `#${bufferCanvasId}`
 const previewImgQuery = "#preview-image"
 
 export const setFileListener = () => {
+    //デバイス判定（タッチが有効か否か）
+    const isTouchDevice = (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    //デバイス判定によるイベントの決定
+    const eventType = (isTouchDevice) ? 'touchend' : 'click';
     let selectedFileName
 
     $("input[type=file]").change(function () {
@@ -22,7 +25,8 @@ export const setFileListener = () => {
         return false
     }
 
-    $(document).on(clickEventType, "#download-btn", () => {
+    $("#download-btn").on(eventType, () => {
+        // alert("tapped :)")
         downloadCanvas(bufferCanvasId, selectedFileName)
     })
 
