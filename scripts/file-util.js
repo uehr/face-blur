@@ -26,7 +26,6 @@ export const setFileListener = () => {
     }
 
     $("#download-btn").on(eventType, () => {
-        // alert("tapped :)")
         downloadCanvas(bufferCanvasId, selectedFileName)
     })
 
