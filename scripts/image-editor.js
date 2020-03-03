@@ -6,7 +6,7 @@ const processingAnimeQuery = "#loading-spinner"
 const mainContentWrapQuery = "#main-content-wrap"
 const btnSwitchSec = 1
 const processingViewOpacity = 0.5
-const minConfidence = 0
+const minConfidence = 0.1
 const maxResults = 500
 const marginScale = 1
 
