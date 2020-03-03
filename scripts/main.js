@@ -4,8 +4,10 @@ const splashBlurSec = 2
 const splashShowSec = 1
 const splashFadeoutSec = 1
 const hoverActionQuery = "#file-select-form,a,button"
+const runBlurDimensionId = "dimension1"
 
 window.addEventListener("load", async () => {
+    ga('set', runBlurDimensionId, "false");
     console.log("Preparing")
     await faceapi.loadSsdMobilenetv1Model('/models')
     splash.finish(splashBlurSec, splashFadeoutSec)

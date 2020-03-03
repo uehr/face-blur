@@ -9,6 +9,7 @@ const processingViewOpacity = 0.5
 const minConfidence = 0.1
 const maxResults = 500
 const marginScale = 1
+const runBlurDimensionId = "dimension1"
 
 
 export const showPreview = sec => {
@@ -39,6 +40,7 @@ const blurScale = (w, h) => {
 }
 
 export const blurFace = () => {
+    ga('set', runBlurDimensionId, "true");
     const input = document.getElementById("image-buffer")
     const bufferCanvas = $("#image-buffer").get(0)
     let preview = $("#preview-image")
